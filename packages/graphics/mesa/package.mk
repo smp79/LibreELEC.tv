@@ -70,7 +70,7 @@ fi
 if listcontains "${GRAPHIC_DRIVERS}" "(nvidia|nvidia-ng" ||
               [ "${OPENGL_SUPPORT}" = "yes" ] &&
               [ "${DISPLAYSERVER}" != "x11" ]; then
-  PKG_DEPENDS_TARGET+=" libglvnd"
+  PKG_DEPENDS_TARGET+=" nvidia libglvnd"
   PKG_MESON_OPTS_TARGET+=" -Dglvnd=enabled"
 else
   PKG_MESON_OPTS_TARGET+=" -Dglvnd=disabled"
